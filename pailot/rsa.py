@@ -21,3 +21,17 @@ try:
 	print(str('%x' % + int(root)).decode('hex'))
 except AttributeError:
 print(bytes.fromhex(str('%x' % + int(root))).decode('utf-8'))
+
+p=158754754453572149934540516805858365529
+q=158309627169945915479670296299307350953193 
+t=(p-1)*(q-1)
+import gmpy2
+d = gmpy2.invert(e,t)
+
+# Decryption
+decimalmessage = pow(c,d,n)
+print(decimalmessage)
+hexmessage= hex(decimalmessage)
+print(hexmessage)
+print(hexmessage[2:].decode("hex"))
+print(bytes.fromhex(hexmessage).decode())
