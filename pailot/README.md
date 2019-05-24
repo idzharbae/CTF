@@ -2,7 +2,7 @@
 
 ## autoepbm
 
-### INSTALATION
+### INSTALATION AND USAGE
 
 Recommended OS : linux  
 1. install selenium  
@@ -13,3 +13,4 @@ Recommended OS : linux
 4. run the script  
 `$ python autoepbm.py`  
 5. enter your login from the terminal  
+6. wait for the script to do its job
