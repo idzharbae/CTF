@@ -5,12 +5,9 @@
 // ==/UserScript==
 
 function removeElement(selector) {
-  let bangsat = document.querySelector(selector);
-  if(bangsat != null) {
-    bangsat.remove();
-    console.log(selector + ' deleted');
-  } else {
-    console.log(selector + ' is null');
+  let bangsat = document.querySelectorAll(selector);
+  for(let i = 0; i < bangsat.length; i++) {
+    bangsat[i].remove();
   }
 }
 
@@ -26,7 +23,9 @@ let elementsToDelete = [
   '.container > a:nth-child(6) > script:nth-child(9)',
   'div.widget_senction:nth-child(2) > div:nth-child(1) > script:nth-child(1)',
   '#post-118264 > script:nth-child(7)',
-  '#main > script:nth-child(3)'
+  '#main > script:nth-child(3)',
+  '#post-100736 > script:nth-child(7)',
+  'script[src*=adskeeper]',
 ];
 
 for(let i = 0; i < elementsToDelete.length; i++) {
